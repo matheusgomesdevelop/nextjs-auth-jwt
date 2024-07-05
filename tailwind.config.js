@@ -1,0 +1,58 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+    content: [
+        './app/**/*.{js,ts,jsx,tsx,mdx}',
+        './pages/**/*.{js,ts,jsx,tsx,mdx}',
+        './components/**/*.{js,ts,jsx,tsx,mdx}',
+        './src/**/*.{js,ts,jsx,tsx,mdx}',
+        './node_modules/primereact/**/*.{js,ts,jsx,tsx}',
+    ],
+    theme: {
+        borderRadius: {
+            'radius-12': '12px',
+        },
+        borderWidth: { 1: '1px' },
+        fontWeight: {
+            semibold: '600',
+            regular: '400',
+            medium: '500',
+        },
+        fontSize: {
+            'display-sm': '30px',
+            'display-md': '36px',
+            'display-lg': '48px',
+            sm: '14px',
+            md: '16px',
+            xl: '20px',
+            lg: '24px',
+        },
+        spacing: {
+            4: '4px',
+            6: '6px',
+            8: '8px',
+            12: '12px',
+            16: '16px',
+            20: '20px',
+            24: '24px',
+            32: '32px',
+            40: '40px',
+            48: '48px',
+            64: '64px',
+            96: '96px',
+        },
+        colors: {
+            'dialog-bg-mask': 'rgba(52, 64, 84, 0.7)',
+            secondary: '#9e77ed',
+            primary: '#7f56d9',
+            text: '#344054',
+            'gray-100': '#f2f4f7',
+            'gray-300': '#d0d5dd',
+            'gray-500': '#667085',
+            'gray-700': '#344054',
+            'gray-900': '#101828',
+            'gray-50': '#f9fafb',
+            white: '#ffffff',
+        },
+    },
+    plugins: [],
+};
