@@ -3,7 +3,7 @@
 import React from 'react';
 import { useRouter } from 'next/navigation';
 
-import useTranslation from '@/core/hooks/useTranslation';
+import useTranslation from '@/app/hooks/useTranslation';
 
 import Text from '../components/atoms/Text';
 import Title from '../components/atoms/Title';

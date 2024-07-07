@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { PrimeReactProvider } from 'primereact/api';
 import i18n_metadata from '@/config/i18n/Metadata/metadata';
-import GlobalContextProvider from '@/core/context/GlobalContext';
+import GlobalContextProvider from '@/app/components/GlobalContext';
 
 import './global.css';
 

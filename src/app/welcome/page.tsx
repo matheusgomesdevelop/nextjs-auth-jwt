@@ -3,8 +3,8 @@
 import React, { useImperativeHandle, useCallback, useContext, forwardRef, useEffect, useState, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 
-import useTranslation from '@/core/hooks/useTranslation';
-import { GlobalContext } from '@/core/context/GlobalContext';
+import useTranslation from '@/app/hooks/useTranslation';
+import { GlobalContext } from '@/app/components/GlobalContext';
 import token from '../lib/token';
 
 import Button, { ButtonRef } from '../components/atoms/Button';
@@ -13,7 +13,7 @@ import Text from '../components/atoms/Text';
 import Header from '../components/organism/Header';
 import Footer from '../components/organism/Footer';
 import Dialog from '../components/templates/Dialog';
-import { SessionHOCProps, withSessionHOC } from '../components/templates/SessionHOC';
+import { SessionHOCProps, withSessionHOC } from '../components/SessionHOC';
 
 interface ConfirmButtonProps {
     onConfirm: () => void;

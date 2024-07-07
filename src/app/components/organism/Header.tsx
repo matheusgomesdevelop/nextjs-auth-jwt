@@ -1,6 +1,6 @@
 import React from 'react';
 
-import useTheme from '@/core/hooks/useTheme';
+import useTheme from '@/app/hooks/useTheme';
 
 import Avatar from '../atoms/Avatar';
 import Icon from '../atoms/Icon';

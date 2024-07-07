@@ -5,8 +5,8 @@ import { useRouter } from 'next/navigation';
 
 import * as Yup from 'yup';
 
-import { GlobalContext } from '@/core/context/GlobalContext';
-import useTranslation from '@/core/hooks/useTranslation';
+import { GlobalContext } from '@/app/components/GlobalContext';
+import useTranslation from '@/app/hooks/useTranslation';
 
 import { authUseCases } from '@/services/AuthService';
 
@@ -18,7 +18,7 @@ import Text from './components/atoms/Text';
 import Icon from './components/atoms/Icon';
 import CheckboxWithLabel from './components/molecules/CheckboxWithLabel';
 import InputWithLabel from './components/molecules/InputWithLabel';
-import { SessionHOCProps, withSessionHOC } from './components/templates/SessionHOC';
+import { SessionHOCProps, withSessionHOC } from './components/SessionHOC';
 import BaseForm, { FormikHelpers, FormikValues } from './components/templates/BaseForm';
 
 interface HomeProps extends SessionHOCProps {}

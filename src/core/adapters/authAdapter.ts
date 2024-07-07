@@ -2,7 +2,7 @@ import { AxiosResponse } from 'axios';
 
 import AuthPortProps from '../ports/authPort';
 
-import httpMiddleware from '../middleware/HttpMiddleware';
+import httpMiddleware from '../http';
 
 import { AuthResponseSchema, AuthUserSchema } from '@/schemas/AuthSchema';
 
