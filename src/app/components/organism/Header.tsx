@@ -2,9 +2,10 @@ import React from 'react';
 
 import useTheme from '@/core/hooks/useTheme';
 
-import { Button, Link } from '@/components/atoms';
 import Avatar from '../atoms/Avatar';
 import Icon from '../atoms/Icon';
+import Link from '../atoms/Link';
+import Button from '../atoms/Button';
 
 const Header: React.FC = () => {
     const theme = useTheme();

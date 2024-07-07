@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-import i18n_translations, { TranslationValue } from '@/config/i18n/i18n';
+import i18n_translations, { TranslationValue } from '../../i18n';
 
 const useTranslation = () => {
     const t = useCallback((searchString: string) => {

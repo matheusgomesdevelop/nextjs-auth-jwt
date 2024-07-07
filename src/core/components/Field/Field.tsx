@@ -1,8 +1,7 @@
 import React, { HTMLInputTypeAttribute } from 'react';
 
 import { ErrorMessage, Field, FieldAttributes, FieldProps } from 'formik';
-
-import { Text } from '@/components/atoms';
+import Text from '@/app/components/atoms/Text';
 
 interface BaseFieldProps extends FieldAttributes<any> {
     render: React.ReactElement;

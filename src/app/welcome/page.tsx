@@ -1,25 +1,94 @@
 'use client';
 
-import React, { useContext, useEffect, useRef } from 'react';
+import React, { useImperativeHandle, useCallback, useContext, forwardRef, useEffect, useState, useRef } from 'react';
+import { useRouter } from 'next/navigation';
 
 import { SessionHOCProps, withSessionHOC } from '@/core/components/SessionHOC/sessionHOC';
-
-import { Button, Text, Title } from '@/components/atoms';
-import { Header, Footer } from '@/components/organism';
-
-import { LogoutDialog, LogoutDialogRef } from '@/components/templates';
-
 import useTranslation from '@/core/hooks/useTranslation';
 import { GlobalContext } from '@/core/context/GlobalContext';
+import tokenService from '@/core/services/tokenService';
+
+import Button, { ButtonRef } from '../components/atoms/Button';
+import Title from '../components/atoms/Title';
+import Text from '../components/atoms/Text';
+import Header from '../components/organism/Header';
+import Footer from '../components/organism/Footer';
+import Dialog from '../components/templates/Dialog';
+
+interface ConfirmButtonProps {
+    onConfirm: () => void;
+}
+
+const ConfirmButton: React.FC<ConfirmButtonProps> = ({ onConfirm }) => {
+    const [isLoading, setIsLoading] = useState(false);
+
+    const { t } = useTranslation();
+
+    return (
+        <Button
+            variant="gradient"
+            loading={isLoading}
+            onClick={() => {
+                setIsLoading(true);
+                onConfirm();
+            }}
+        >
+            {!isLoading && t('specific.welcome.modal.logoutDialog.btnConfirm')}
+        </Button>
+    );
+};
+
+interface LogoutDialogRef {
+    setVisible: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const LogoutDialog: React.ForwardRefExoticComponent<object & React.RefAttributes<LogoutDialogRef>> = forwardRef(
+    (props, ref) => {
+        const [visible, setVisible] = useState(false);
+        const router = useRouter();
+        const { t } = useTranslation();
+
+        const btnLogoutRef = useRef<ButtonRef>(null);
+
+        const onConfirm = useCallback(() => {
+            btnLogoutRef.current?.setLoading(true);
+            tokenService.delete();
+            router.push('/');
+        }, []);
+
+        const onReject = useCallback(() => setVisible(false), []);
+
+        useImperativeHandle(ref, () => ({ setVisible }), []);
+
+        return (
+            <Dialog className="text-center my-0 mx-20" showHeader={false} visible={visible} onHide={() => null}>
+                <div className="flex-col flex gap-8">
+                    <Title variant="h2">{t('specific.welcome.modal.logoutDialog.title')}</Title>
+                    <Text variant="fwReg-fs20-lh30-gray500">
+                        {t('specific.welcome.modal.logoutDialog.description')}
+                    </Text>
+                </div>
+
+                <div className="flex gap-12">
+                    <ConfirmButton onConfirm={onConfirm} />
+                    <Button variant="fwMd-fs16-colGray700-bgWhite" onClick={onReject}>
+                        {t('specific.welcome.modal.logoutDialog.btnReject')}
+                    </Button>
+                </div>
+            </Dialog>
+        );
+    }
+);
+
+LogoutDialog.displayName = 'LogoutDialog';
 
 interface WelcomeProps extends SessionHOCProps {}
 
 const Welcome: React.FC<WelcomeProps> = ({ data }) => {
-    const { session } = data;
-
+    const logoutDialogRef = useRef<LogoutDialogRef>(null);
     const { blockUIRef } = useContext(GlobalContext);
 
-    const logoutDialogRef = useRef<LogoutDialogRef>(null);
+    const { session } = data;
 
     const { t } = useTranslation();
 

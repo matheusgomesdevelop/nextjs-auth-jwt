@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Link } from '@/components/atoms';
 import Icon from '../atoms/Icon';
+import Link from '../atoms/Link';
 
 const Footer: React.FC = () => {
     const date = new Date();
