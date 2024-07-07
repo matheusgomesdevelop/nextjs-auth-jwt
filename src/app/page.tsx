@@ -9,10 +9,11 @@ import { SessionHOCProps, withSessionHOC } from '@/core/components/SessionHOC/se
 import BaseForm, { FormikHelpers, FormikValues } from '@/core/components/Form/Form';
 import { GlobalContext } from '@/core/context/GlobalContext';
 
-import { Text, Title } from '@/components/atoms';
+import { Text } from '@/components/atoms';
 import Button, { ButtonRef } from './components/atoms/Button';
 import Header from './components/organism/Header';
 import Footer from './components/organism/Footer';
+import Title from './components/atoms/Title';
 import Icon from './components/atoms/Icon';
 
 import { CheckboxWithLabel, InputWithLabel } from '@/components/molecules';

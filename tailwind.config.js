@@ -18,6 +18,10 @@ module.exports = {
             regular: '400',
             medium: '500',
         },
+        lineHeight: {
+            64: '64px',
+            48: '48px',
+        },
         fontSize: {
             'display-sm': '30px',
             'display-md': '36px',
