@@ -15,8 +15,8 @@ import Footer from './components/organism/Footer';
 import Title from './components/atoms/Title';
 import Text from './components/atoms/Text';
 import Icon from './components/atoms/Icon';
-
-import { CheckboxWithLabel, InputWithLabel } from '@/components/molecules';
+import CheckboxWithLabel from './components/molecules/CheckboxWithLabel';
+import InputWithLabel from './components/molecules/InputWithLabel';
 
 import useTranslation from '@/core/hooks/useTranslation';
 
