@@ -4,9 +4,8 @@ import Label from './Label/Label';
 import Input from './Input/Input';
 import Title from './Title/Title';
 import Text from './Text/Text';
-import Icon from './Icon/Icon';
 import Link from './Link/Link';
 
-export { Checkbox, Button, Title, Label, Input, Text, Icon, Link };
+export { Checkbox, Button, Title, Label, Input, Text, Link };
 
 export type { ButtonRef };
