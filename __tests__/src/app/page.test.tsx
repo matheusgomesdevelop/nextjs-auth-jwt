@@ -3,7 +3,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 
-import { AppRouterContextProviderMock } from '@/utils/test-utils/app-router-ctx-provider';
+import { AppRouterContextProviderMock } from '@/core/utils/test-utils/app-router-ctx-provider';
 
 import Home from '@/app/page';
 
