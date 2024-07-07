@@ -2,6 +2,8 @@ import React from 'react';
 
 import { InputTextProps, InputText } from 'primereact/inputtext';
 
-const Input: React.FC<InputTextProps> = ({ ...props }) => <InputText {...props} />;
+export interface InputProps extends InputTextProps {}
+
+const Input: React.FC<InputProps> = ({ ...props }) => <InputText {...props} />;
 
 export default Input;

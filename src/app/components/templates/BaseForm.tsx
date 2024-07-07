@@ -9,15 +9,13 @@ interface BaseFormProps extends FormikConfig<FormikValues> {
     style?: React.CSSProperties;
 }
 
-const BaseForm: React.FC<BaseFormProps> = ({ children, className, style, ...props }) => {
-    return (
-        <Formik {...props}>
-            <Form data-testid={props['data-testid']} className={className} style={style}>
-                {children}
-            </Form>
-        </Formik>
-    );
-};
+const BaseForm: React.FC<BaseFormProps> = ({ children, className, style, ...props }) => (
+    <Formik {...props}>
+        <Form data-testid={props['data-testid']} className={className} style={style}>
+            {children}
+        </Form>
+    </Formik>
+);
 
 export type { FormikHelpers, FormikValues };
 

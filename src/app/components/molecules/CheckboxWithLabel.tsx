@@ -1,6 +1,7 @@
 import React from 'react';
 
-import BaseField from '@/core/components/Field/Field';
+import BaseField from '../templates/BaseField';
+
 import Checkbox, { CheckboxProps } from '../atoms/Checkbox';
 import Label from '../atoms/Label';
 

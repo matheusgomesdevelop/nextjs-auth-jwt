@@ -1,12 +1,10 @@
 import React from 'react';
 
-import { InputTextProps } from 'primereact/inputtext';
-
-import BaseField from '@/core/components/Field/Field';
+import BaseField from '../templates/BaseField';
 import Label from '../atoms/Label';
-import Input from '../atoms/Input';
+import Input, { InputProps } from '../atoms/Input';
 
-interface InputWithLabelProps extends InputTextProps {
+interface InputWithLabelProps extends InputProps {
     labelText: string;
     type: React.HTMLInputTypeAttribute;
     name: string;

@@ -3,7 +3,6 @@
 import React, { useImperativeHandle, useCallback, useContext, forwardRef, useEffect, useState, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 
-import { SessionHOCProps, withSessionHOC } from '@/core/components/SessionHOC/sessionHOC';
 import useTranslation from '@/core/hooks/useTranslation';
 import { GlobalContext } from '@/core/context/GlobalContext';
 import tokenService from '@/core/services/tokenService';
@@ -14,6 +13,7 @@ import Text from '../components/atoms/Text';
 import Header from '../components/organism/Header';
 import Footer from '../components/organism/Footer';
 import Dialog from '../components/templates/Dialog';
+import { SessionHOCProps, withSessionHOC } from '../components/templates/SessionHOC';
 
 interface ConfirmButtonProps {
     onConfirm: () => void;

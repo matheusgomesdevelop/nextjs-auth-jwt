@@ -2,8 +2,8 @@
 
 import React, { useRef } from 'react';
 
-import BlockUI, { BlockUIRef } from '../components/BlockUI/BlockUI';
 import Toast, { ToastRef } from '@/app/components/templates/Toast';
+import BlockUI, { BlockUIRef } from '@/app/components/templates/BlockUI';
 
 interface GlobalContextValuesProps {
     blockUIRef: React.RefObject<BlockUIRef>;

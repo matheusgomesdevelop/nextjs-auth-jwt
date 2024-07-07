@@ -5,9 +5,10 @@ import { useRouter } from 'next/navigation';
 
 import * as Yup from 'yup';
 
-import { SessionHOCProps, withSessionHOC } from '@/core/components/SessionHOC/sessionHOC';
-import BaseForm, { FormikHelpers, FormikValues } from '@/core/components/Form/Form';
 import { GlobalContext } from '@/core/context/GlobalContext';
+import useTranslation from '@/core/hooks/useTranslation';
+
+import { authUseCases } from '@/services/AuthService';
 
 import Button, { ButtonRef } from './components/atoms/Button';
 import Header from './components/organism/Header';
@@ -17,10 +18,8 @@ import Text from './components/atoms/Text';
 import Icon from './components/atoms/Icon';
 import CheckboxWithLabel from './components/molecules/CheckboxWithLabel';
 import InputWithLabel from './components/molecules/InputWithLabel';
-
-import useTranslation from '@/core/hooks/useTranslation';
-
-import { authUseCases } from '@/services/AuthService';
+import { SessionHOCProps, withSessionHOC } from './components/templates/SessionHOC';
+import BaseForm, { FormikHelpers, FormikValues } from './components/templates/BaseForm';
 
 interface HomeProps extends SessionHOCProps {}
 
