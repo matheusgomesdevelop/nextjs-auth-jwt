@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 
 import useTranslation from '@/core/hooks/useTranslation';
 import { GlobalContext } from '@/core/context/GlobalContext';
-import tokenService from '@/core/services/tokenService';
+import token from '../lib/token';
 
 import Button, { ButtonRef } from '../components/atoms/Button';
 import Title from '../components/atoms/Title';
@@ -52,7 +52,7 @@ const LogoutDialog: React.ForwardRefExoticComponent<object & React.RefAttributes
 
         const onConfirm = useCallback(() => {
             btnLogoutRef.current?.setLoading(true);
-            tokenService.delete();
+            token.delete();
             router.push('/');
         }, []);
 

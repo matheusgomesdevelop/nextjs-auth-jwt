@@ -48,7 +48,7 @@ const deleteStorage = (ctx?: GetServerSidePropsContext) => {
     nookies.destroy(ctx, ACCESS_TOKEN_KEY);
 };
 
-const tokenService = {
+const token = {
     save: (value: string, manter_logado: boolean, ctx?: GetServerSidePropsContext) => {
         return saveStorage(value, manter_logado, ctx);
     },
@@ -56,4 +56,4 @@ const tokenService = {
     delete: (ctx?: GetServerSidePropsContext) => deleteStorage(ctx),
 };
 
-export default tokenService;
+export default token;

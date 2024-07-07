@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { AuthUserSchema } from '@/schemas/AuthSchema';
 
-import getSession from '../services/sessionService';
+import getSession from '@/app/lib/session';
 
 function useSession() {
     const [session, setSession] = useState<AuthUserSchema | undefined>(undefined);

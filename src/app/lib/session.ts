@@ -2,13 +2,11 @@ import { GetServerSidePropsContext } from 'next';
 
 import { authUseCases } from '@/services/AuthService';
 
-import tokenService from './tokenService';
+import token from './token';
 
 const getSession = async (ctx?: GetServerSidePropsContext) => {
-    const token = tokenService.get(ctx);
-
     try {
-        const user = await authUseCases.me(token);
+        const user = await authUseCases.me(token.get(ctx));
 
         return user;
     } catch (error) {
