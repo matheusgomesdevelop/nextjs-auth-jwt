@@ -8,6 +8,7 @@
     @include centralizar;
     display: flex;
     justify-content: space-between;
+    background-color: red;
 
     @include d(tablet) {
         height: 80px;

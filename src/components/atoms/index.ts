@@ -1,5 +1,5 @@
 import Checkbox from './Checkbox/Checkbox';
-import Button, { ButtonRef } from '../../app/components/atoms/Button/Button';
+import Button, { ButtonRef } from '../../app/components/atoms/Button';
 import Avatar from './Avatar/Avatar';
 import Label from './Label/Label';
 import Input from './Input/Input';
