@@ -3,7 +3,7 @@
 import React, { useRef } from 'react';
 
 import BlockUI, { BlockUIRef } from '../components/BlockUI/BlockUI';
-import Toast, { ToastRef } from '../components/Toast/Toast';
+import Toast, { ToastRef } from '@/app/components/templates/Toast';
 
 interface GlobalContextValuesProps {
     blockUIRef: React.RefObject<BlockUIRef>;

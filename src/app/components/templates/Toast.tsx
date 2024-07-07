@@ -2,8 +2,6 @@ import React, { forwardRef, useImperativeHandle, useRef } from 'react';
 
 import * as PrToast from 'primereact/toast';
 
-import styles from './Toast.module.css';
-
 export interface ToastRef {
     showToast: (message: PrToast.ToastMessage | PrToast.ToastMessage[]) => void;
 }
@@ -17,22 +15,21 @@ const Toast: React.ForwardRefRenderFunction<ToastRef, ToastProps> = (props, ref)
 
     return (
         <PrToast.Toast
-            data-testid="toast-testid"
+            ref={toastRef}
             pt={{
                 message: {
-                    className: styles.toast__message,
+                    className: 'px-24 py-16',
                 },
                 content: {
-                    className: styles.toast__content,
+                    className: 'flex gap-16',
                 },
                 icon: {
-                    className: styles.toast__icon,
+                    className: '',
                 },
                 text: {
-                    className: styles.toast__text,
+                    className: 'flex-col flex gap-6',
                 },
             }}
-            ref={toastRef}
             {...props}
         />
     );
