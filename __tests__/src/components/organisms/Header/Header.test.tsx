@@ -4,7 +4,7 @@ import { render, screen } from '@testing-library/react';
 
 import renderer from 'react-test-renderer';
 
-import Header from '@/components/organism/Header/Header';
+import Header from '@/app/components/organism/Header';
 
 describe('Deve renderizar o Header corretamente', () => {
     it('Deve renderizar o Avatar, corretamente', () => {

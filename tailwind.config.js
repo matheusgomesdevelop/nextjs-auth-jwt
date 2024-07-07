@@ -9,7 +9,8 @@ module.exports = {
     ],
     theme: {
         borderRadius: {
-            'radius-12': '12px',
+            12: '12px',
+            8: '8px',
         },
         borderWidth: { 1: '1px' },
         fontWeight: {
@@ -52,6 +53,9 @@ module.exports = {
             'gray-900': '#101828',
             'gray-50': '#f9fafb',
             white: '#ffffff',
+        },
+        container: {
+            center: true,
         },
     },
     plugins: [],

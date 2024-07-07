@@ -11,8 +11,9 @@ import { GlobalContext } from '@/core/context/GlobalContext';
 
 import { Text, Title, Icon } from '@/components/atoms';
 import Button, { ButtonRef } from './components/atoms/Button';
+import Header from './components/organism/Header';
+import Footer from './components/organism/Footer';
 
-import { Header, Footer } from '@/components/organism';
 import { CheckboxWithLabel, InputWithLabel } from '@/components/molecules';
 
 import useTranslation from '@/core/hooks/useTranslation';
@@ -88,9 +89,9 @@ const Home: React.FC<HomeProps> = ({ loading, error, data }) => {
 
             <BaseForm
                 initialValues={{
-                    email: 'test@matheusgomesdev.com.br',
-                    password: '123456',
                     manter_logado: false,
+                    password: '123456',
+                    email: 'test@matheusgomesdev.com.br',
                 }}
                 validationSchema={validationSchema}
                 validateOnChange={false}

@@ -11,29 +11,26 @@ export interface ButtonRef {
     setLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Button: React.ForwardRefRenderFunction<ButtonRef, ButtonProps> = ({ variant, children, ...props }, ref) => {
+const Button: React.ForwardRefRenderFunction<ButtonRef, ButtonProps> = ({ variant, children }, ref) => {
     const [loading, setLoading] = useState(false);
 
     useImperativeHandle(ref, () => ({ setLoading }), []);
 
     return (
         <PrButton.Button
-            data-testid="button-testid"
-            {...props}
             loading={loading}
-            className={`
-        ${
-            variant === 'transparent'
-                ? 'w-auto h-auto border-none bg-transparent text-gray-900'
-                : variant === 'fwMd-fs16-colGray700-bgWhite'
-                  ? 'text-md text-gray-700 bg-white border-1 border-solid border-gray-100 hover:opacity-90 hover:border-primary lg:max-w-[82px]'
-                  : variant === 'gradient'
-                    ? 'w-full max-w-[82px] bg-gradient-to-r from-primary to-secondary font-semibold text-white border-1 border-solid border-secondary hover:opacity-90 transition duration-150'
-                    : ''
-        }
+            className={`px-[10px] py-[14px] h-[44px] w-full rounded-8 lg:max-w-[82px] border-1 border-solid hover:opacity-90 transition duration-150 ${
+                variant === 'transparent'
+                    ? 'border-none bg-transparent text-gray-900'
+                    : variant === 'fwMd-fs16-colGray700-bgWhite'
+                      ? 'text-md text-gray-700 bg-white border-gray-100 hover:border-primary'
+                      : variant === 'gradient'
+                        ? 'bg-gradient-to-r from-primary to-secondary font-semibold text-white border-secondary'
+                        : ''
+            }
     `}
         >
-            {loading ? '' : children}
+            {!loading && children}
         </PrButton.Button>
     );
 };
