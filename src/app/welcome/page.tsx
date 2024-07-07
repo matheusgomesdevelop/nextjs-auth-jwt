@@ -3,7 +3,7 @@
 import React, { useImperativeHandle, useCallback, useContext, forwardRef, useEffect, useState, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 
-import useTranslation from '@/app/hooks/useTranslation';
+import useTranslation from '@/app/lib/hooks/useTranslation';
 import { GlobalContext } from '@/app/components/GlobalContext';
 import token from '../lib/token';
 

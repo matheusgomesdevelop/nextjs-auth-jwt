@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 
 import { AuthUserSchema } from '@/schemas/AuthSchema';
 
-import useSession from '@/app/hooks/useSession';
+import useSession from '@/app/lib/hooks/useSession';
 
 export interface SessionHOCProps {
     data: {

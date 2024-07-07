@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import * as Yup from 'yup';
 
 import { GlobalContext } from '@/app/components/GlobalContext';
-import useTranslation from '@/app/hooks/useTranslation';
+import useTranslation from '@/app/lib/hooks/useTranslation';
 
 import { authUseCases } from '@/services/AuthService';
 
