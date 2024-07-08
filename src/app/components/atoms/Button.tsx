@@ -11,7 +11,10 @@ export interface ButtonRef {
     setLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Button: React.ForwardRefRenderFunction<ButtonRef, ButtonProps> = ({ variant, children, className }, ref) => {
+const Button: React.ForwardRefRenderFunction<ButtonRef, ButtonProps> = (
+    { variant, children, className, ...props },
+    ref
+) => {
     const [loading, setLoading] = useState(false);
 
     useImperativeHandle(ref, () => ({ setLoading }), []);
@@ -29,6 +32,7 @@ const Button: React.ForwardRefRenderFunction<ButtonRef, ButtonProps> = ({ varian
                         : ''
             } 
    ${className} `}
+            {...props}
         >
             {!loading && children}
         </PrButton.Button>
