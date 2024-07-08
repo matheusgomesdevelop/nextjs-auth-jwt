@@ -5,19 +5,21 @@ import { useRouter } from 'next/navigation';
 
 import * as Yup from 'yup';
 
-import { SessionHOCProps, withSessionHOC } from '@/core/components/SessionHOC/sessionHOC';
-import BaseForm, { FormikHelpers, FormikValues } from '@/core/components/Form/Form';
-import { GlobalContext } from '@/core/context/GlobalContext';
-
-import { Text, Title, Icon } from '@/components/atoms';
-import Button, { ButtonRef } from './components/atoms/Button/Button';
-
-import { Header, Footer } from '@/components/organism';
-import { CheckboxWithLabel, InputWithLabel } from '@/components/molecules';
-
-import useTranslation from '@/core/hooks/useTranslation';
+import { GlobalContext } from '@/app/components/GlobalContext';
+import useTranslation from '@/app/lib/hooks/useTranslation';
 
 import { authUseCases } from '@/services/AuthService';
+
+import Button, { ButtonRef } from './components/atoms/Button';
+import Header from './components/organism/Header';
+import Footer from './components/organism/Footer';
+import Title from './components/atoms/Title';
+import Text from './components/atoms/Text';
+import Icon from './components/atoms/Icon';
+import CheckboxWithLabel from './components/molecules/CheckboxWithLabel';
+import InputWithLabel from './components/molecules/InputWithLabel';
+import { SessionHOCProps, withSessionHOC } from './components/SessionHOC';
+import BaseForm, { FormikHelpers, FormikValues } from './components/templates/BaseForm';
 
 interface HomeProps extends SessionHOCProps {}
 
@@ -83,59 +85,61 @@ const Home: React.FC<HomeProps> = ({ loading, error, data }) => {
     }, []);
 
     return (
-        <>
-            <main data-testid="page-login" className="page-login">
-                <Header />
+        <main
+            className="items-center justify-between flex-col gap-y-48 flex h-[100vh]"
+            style={{
+                padding: '20px 16px',
+            }}
+        >
+            <Header />
 
-                <BaseForm
-                    initialValues={{
-                        email: 'test@matheusgomesdev.com.br',
-                        password: '123456',
-                        manter_logado: false,
-                    }}
-                    validationSchema={validationSchema}
-                    validateOnChange={false}
-                    validateOnBlur={true}
-                    onSubmit={handleLogin}
-                    data-testid="page-login-form-testid"
-                    style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}
-                >
-                    <div className="page-login__form">
-                        <div data-testid="page-login-title-testid" className="page-login__form_title">
-                            <Icon icon="pi-lock" />
-                            <Title variant="h2">{t('specific.home.label.title')}</Title>
-                            <Text variant="fwReg-fs16-gray500">{t('specific.home.label.description')}</Text>
-                        </div>
-
-                        <InputWithLabel
-                            placeholder={t('specific.home.inputLabel.email')}
-                            labelText="Email"
-                            name="email"
-                            type="email"
-                        />
-
-                        <InputWithLabel
-                            labelText="Senha"
-                            name="password"
-                            type="password"
-                            placeholder={t('specific.home.inputLabel.senha')}
-                        />
-
-                        <CheckboxWithLabel
-                            name="manter_logado"
-                            labelText={`${t('specific.home.inputLabel.manterConectado')}`}
-                            checked={false}
-                        />
-
-                        <Button variant="gradient" type="submit" ref={btnSubmitRef}>
-                            {`${t('specific.home.inputLabel.btnEntrar')}`}
-                        </Button>
+            <BaseForm
+                initialValues={{
+                    manter_logado: false,
+                    password: '123456',
+                    email: 'test@matheusgomesdev.com.br',
+                }}
+                validationSchema={validationSchema}
+                validateOnChange={false}
+                validateOnBlur={true}
+                className="flex-col flex gap-20"
+                onSubmit={handleLogin}
+            >
+                <div className="max-w-lg flex-col flex gap-32 px-64 py-16 md:px-96 md:py-0">
+                    <div className="justify-center items-center flex-col flex text-center">
+                        <Icon icon="pi-lock" />
+                        <Title variant="h2">{t('specific.home.label.title')}</Title>
+                        <Text variant="fwReg-fs16-gray500">{t('specific.home.label.description')}</Text>
                     </div>
-                </BaseForm>
 
-                <Footer />
-            </main>
-        </>
+                    <InputWithLabel
+                        placeholder={t('specific.home.inputLabel.email')}
+                        labelText="Email"
+                        name="email"
+                        type="email"
+                    />
+
+                    <InputWithLabel
+                        placeholder={t('specific.home.inputLabel.senha')}
+                        labelText="Senha"
+                        name="password"
+                        type="password"
+                    />
+
+                    <CheckboxWithLabel
+                        labelText={`${t('specific.home.inputLabel.manterConectado')}`}
+                        checked={false}
+                        name="manter_logado"
+                    />
+
+                    <Button variant="gradient" type="submit" ref={btnSubmitRef}>
+                        {`${t('specific.home.inputLabel.btnEntrar')}`}
+                    </Button>
+                </div>
+            </BaseForm>
+
+            <Footer />
+        </main>
     );
 };
 

@@ -9,13 +9,19 @@ module.exports = {
     ],
     theme: {
         borderRadius: {
-            'radius-12': '12px',
+            12: '12px',
+            8: '8px',
         },
         borderWidth: { 1: '1px' },
         fontWeight: {
             semibold: '600',
             regular: '400',
             medium: '500',
+        },
+        lineHeight: {
+            64: '64px',
+            48: '48px',
+            32: '32px',
         },
         fontSize: {
             'display-sm': '30px',
@@ -52,6 +58,10 @@ module.exports = {
             'gray-900': '#101828',
             'gray-50': '#f9fafb',
             white: '#ffffff',
+            'red-500': '#ef4444',
+        },
+        container: {
+            center: true,
         },
     },
     plugins: [],

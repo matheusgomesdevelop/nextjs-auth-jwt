@@ -2,7 +2,7 @@ import React from 'react';
 
 import renderer from 'react-test-renderer';
 
-import Footer from '@/components/organism/Footer/Footer';
+import Footer from '@/app/components/organism/Footer';
 
 describe('Deve renderizar o footer corretamente', () => {
     it('Deve preservar a estrutura visual do footer', () => {
