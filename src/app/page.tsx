@@ -85,7 +85,12 @@ const Home: React.FC<HomeProps> = ({ loading, error, data }) => {
     }, []);
 
     return (
-        <main className="items-center justify-between flex-col flex h-[100vh] w-full">
+        <main
+            className="items-center justify-between flex-col gap-y-48 flex h-[100vh]"
+            style={{
+                padding: '20px 16px',
+            }}
+        >
             <Header />
 
             <BaseForm
