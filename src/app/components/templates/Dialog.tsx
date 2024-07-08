@@ -11,6 +11,9 @@ interface DialogProps extends PrDialogProps.DialogProps {}
 const Dialog: React.FC<DialogProps> = ({ children, ...props }) => (
     <PrDialogProps.Dialog
         pt={{
+            content: {
+                className: 'bg-white',
+            },
             root: {
                 className: 'w-full max-w-md bg-white rounded-12 p-24',
             },
