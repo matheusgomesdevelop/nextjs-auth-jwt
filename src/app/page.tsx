@@ -97,10 +97,10 @@ const Home: React.FC<HomeProps> = ({ loading, error, data }) => {
                 validationSchema={validationSchema}
                 validateOnChange={false}
                 validateOnBlur={true}
+                className="flex-col flex gap-20"
                 onSubmit={handleLogin}
-                style={{ flexDirection: 'column', display: 'flex', gap: '20px' }}
             >
-                <div className="max-w-sm flex-col flex gap-32 px-64 py-16 md:px-96 md:py-0">
+                <div className="max-w-lg flex-col flex gap-32 px-64 py-16 md:px-96 md:py-0">
                     <div className="justify-center items-center flex-col flex text-center">
                         <Icon icon="pi-lock" />
                         <Title variant="h2">{t('specific.home.label.title')}</Title>
