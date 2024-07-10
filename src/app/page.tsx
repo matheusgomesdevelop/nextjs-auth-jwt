@@ -16,7 +16,6 @@ import Footer from './components/organism/Footer';
 import Title from './components/atoms/Title';
 import Text from './components/atoms/Text';
 import Icon from './components/atoms/Icon';
-import CheckboxWithLabel from './components/molecules/CheckboxWithLabel';
 import InputWithLabel from './components/molecules/InputWithLabel';
 import { SessionHOCProps, withSessionHOC } from './components/SessionHOC';
 import BaseForm, { FormikHelpers, FormikValues } from './components/templates/BaseForm';
@@ -124,12 +123,6 @@ const Home: React.FC<HomeProps> = ({ loading, error, data }) => {
                         labelText="Senha"
                         name="password"
                         type="password"
-                    />
-
-                    <CheckboxWithLabel
-                        labelText={`${t('specific.home.inputLabel.manterConectado')}`}
-                        checked={false}
-                        name="manter_logado"
                     />
 
                     <Button variant="gradient" type="submit" ref={btnSubmitRef}>
