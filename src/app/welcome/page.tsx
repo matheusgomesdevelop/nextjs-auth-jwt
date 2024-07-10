@@ -26,6 +26,7 @@ const ConfirmButton: React.FC<ConfirmButtonProps> = ({ onConfirm }) => {
 
     return (
         <Button
+            className="max-w-[182px]"
             variant="gradient"
             loading={isLoading}
             onClick={() => {
@@ -61,7 +62,7 @@ const LogoutDialog: React.ForwardRefExoticComponent<object & React.RefAttributes
         useImperativeHandle(ref, () => ({ setVisible }), []);
 
         return (
-            <Dialog className="text-center my-0 mx-20" showHeader={false} visible={visible} onHide={() => null}>
+            <Dialog className="text-center" showHeader={false} visible={visible} onHide={() => null}>
                 <div className="flex-col flex gap-8">
                     <Title variant="h2">{t('specific.welcome.modal.logoutDialog.title')}</Title>
                     <Text variant="fwReg-fs20-lh30-gray500">
@@ -69,9 +70,14 @@ const LogoutDialog: React.ForwardRefExoticComponent<object & React.RefAttributes
                     </Text>
                 </div>
 
-                <div className="flex gap-12">
+                <div
+                    className="flex justify-center gap-12"
+                    style={{
+                        marginTop: '12px',
+                    }}
+                >
                     <ConfirmButton onConfirm={onConfirm} />
-                    <Button variant="fwMd-fs16-colGray700-bgWhite" onClick={onReject}>
+                    <Button className="max-w-[82px]" variant="fwMd-fs16-colGray700-bgWhite" onClick={onReject}>
                         {t('specific.welcome.modal.logoutDialog.btnReject')}
                     </Button>
                 </div>
