@@ -95,7 +95,7 @@ const Home: React.FC<HomeProps> = ({ loading, error, data }) => {
                 initialValues={{
                     manter_logado: false,
                     password: '123456',
-                    email: 'test@matheusgomesdev.com.br',
+                    email: 'teste@test.com',
                 }}
                 validationSchema={validationSchema}
                 validateOnChange={false}

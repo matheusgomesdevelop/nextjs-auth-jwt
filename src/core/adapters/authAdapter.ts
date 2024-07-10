@@ -5,14 +5,10 @@ import { AuthResponseSchema, AuthUserSchema } from '@/schemas/AuthSchema';
 
 const authAdapter: AuthPortProps = {
     login: async ({ identifier, password }) => {
-        const method = 'POST';
-
-        const url = `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/auth/local`;
-
         try {
             const response: AxiosResponse<AuthResponseSchema> = await httpMiddleware({
-                method,
-                url,
+                method: 'POST',
+                url: `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/auth/local`,
                 body: {
                     identifier,
                     password,
@@ -25,12 +21,12 @@ const authAdapter: AuthPortProps = {
         }
     },
     me: async (token: string) => {
-        const method = 'GET';
-
-        const url = `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/users/me`;
-
         try {
-            const response: AxiosResponse<AuthUserSchema> = await httpMiddleware({ method, url, token });
+            const response: AxiosResponse<AuthUserSchema> = await httpMiddleware({
+                method: 'GET',
+                url: `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/users/me`,
+                token,
+            });
 
             return response.data;
         } catch (error) {
