@@ -1,9 +1,6 @@
 import { AxiosResponse } from 'axios';
-
 import AuthPortProps from '../ports/authPort';
-
 import httpMiddleware from '../http';
-
 import { AuthResponseSchema, AuthUserSchema } from '@/schemas/AuthSchema';
 
 const authAdapter: AuthPortProps = {

@@ -24,15 +24,13 @@ import BaseForm, { FormikHelpers, FormikValues } from './components/templates/Ba
 interface HomeProps extends SessionHOCProps {}
 
 const Home: React.FC<HomeProps> = ({ loading, error, data }) => {
-    const { session } = data;
-
-    const { blockUIRef, toastRef } = useContext(GlobalContext);
-
     const router = useRouter();
 
+    const { blockUIRef, toastRef } = useContext(GlobalContext);
     const btnSubmitRef = useRef<ButtonRef>(null);
-
     const { t } = useTranslation();
+
+    const { session } = data;
 
     useMemo(() => {
         if (session && !error && !loading) {
