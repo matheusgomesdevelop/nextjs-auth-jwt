@@ -21,33 +21,33 @@ import InputWithLabel from './components/molecules/InputWithLabel';
 import { SessionHOCProps, withSessionHOC } from './components/SessionHOC';
 import BaseForm, { FormikHelpers, FormikValues } from './components/templates/BaseForm';
 
+import i18n_home from '@/config/i18n/Specific/home/home';
+
+const validationSchema = Yup.object().shape({
+    email: Yup.string()
+        .required(`${i18n_home.home.inputErrorMessage.invalid_email}`)
+        .email(`${i18n_home.home.inputErrorMessage.invalid_email}`),
+    password: Yup.string()
+        .required(`${i18n_home.home.inputErrorMessage.invalid_email_password}`)
+        .min(4, `${i18n_home.home.inputErrorMessage.invalid_password_min_length}`),
+});
+
 interface HomeProps extends SessionHOCProps {}
 
 const Home: React.FC<HomeProps> = ({ loading, error, data }) => {
-    const { session } = data;
-
-    const { blockUIRef, toastRef } = useContext(GlobalContext);
-
     const router = useRouter();
 
+    const { blockUIRef, toastRef } = useContext(GlobalContext);
     const btnSubmitRef = useRef<ButtonRef>(null);
-
     const { t } = useTranslation();
+
+    const { session } = data;
 
     useMemo(() => {
         if (session && !error && !loading) {
             blockUIRef.current?.setIsBlocked(true);
         }
     }, [loading, session, error]);
-
-    const validationSchema = Yup.object().shape({
-        email: Yup.string()
-            .required(`${t('specific.home.inputErrorMessage.invalid_email')}`)
-            .email(`${t('specific.home.inputErrorMessage.invalid_email')}`),
-        password: Yup.string()
-            .required(`${t('specific.home.inputErrorMessage.invalid_password_empty')}`)
-            .min(4, `${t('specific.home.inputErrorMessage.invalid_password_min_length')}`),
-    });
 
     const handleLogin = useCallback(async (values: FormikValues, actions: FormikHelpers<FormikValues>) => {
         const { manter_logado, password, email } = values;
@@ -97,7 +97,7 @@ const Home: React.FC<HomeProps> = ({ loading, error, data }) => {
                 initialValues={{
                     manter_logado: false,
                     password: '123456',
-                    email: 'test@matheusgomesdev.com.br',
+                    email: 'teste@test.com',
                 }}
                 validationSchema={validationSchema}
                 validateOnChange={false}

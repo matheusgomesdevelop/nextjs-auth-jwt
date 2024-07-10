@@ -15,49 +15,6 @@ import Footer from '../components/organism/Footer';
 import Dialog from '../components/templates/Dialog';
 import { SessionHOCProps, withSessionHOC } from '../components/SessionHOC';
 
-/*
-
-.page-welcome {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-
-    &__content {
-        width: 100%;
-        max-width: $tablet;
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-        max-width: 768px;
-
-        padding: var(--spacing-64) var(--spacing-16);
-
-        @include d(tablet) {
-            padding: var(--spacing-96) 0;
-        }
-
-        &_heading {
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing-12);
-            margin-bottom: var(--spacing-24);
-        }
-
-        & > [id='a-text-description'] {
-            margin-bottom: var(--spacing-40);
-        }
-    }
-
-    & > [id='footer'] {
-        margin-top: auto;
-    }
-}
-
-*/
 interface ConfirmButtonProps {
     onConfirm: () => void;
 }
@@ -141,12 +98,17 @@ const Welcome: React.FC<WelcomeProps> = ({ data }) => {
 
     return (
         <>
-            <section className="page-welcome">
+            <section
+                className="items-center justify-between flex-col gap-y-48 flex h-[100vh]"
+                style={{
+                    padding: '20px 16px',
+                }}
+            >
                 <Header />
 
                 {session && (
-                    <main className="page-welcome__content">
-                        <div className="page-welcome__content_heading">
+                    <div className="max-w-2xl flex-col flex gap-32 px-64 py-16 md:px-96 md:py-0">
+                        <div className="justify-center items-center flex-col flex text-center">
                             <Text data-testid="a-text-welcome" variant="fwSb-fs16-primary">
                                 {t('specific.welcome.label.title')}
                             </Text>
@@ -171,7 +133,7 @@ const Welcome: React.FC<WelcomeProps> = ({ data }) => {
                         >
                             {t('specific.welcome.label.btnLogout')}
                         </Button>
-                    </main>
+                    </div>
                 )}
 
                 <Footer />
