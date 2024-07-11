@@ -64,8 +64,10 @@ const LogoutDialog: React.ForwardRefExoticComponent<object & React.RefAttributes
         return (
             <Dialog className="text-center" showHeader={false} visible={visible} onHide={() => null}>
                 <div className="flex-col flex gap-8">
-                    <Title variant="h2">{t('specific.welcome.modal.logoutDialog.title')}</Title>
-                    <Text variant="fwReg-fs20-lh30-gray500">
+                    <Title className="text-black" variant="h2">
+                        {t('specific.welcome.modal.logoutDialog.title')}
+                    </Title>
+                    <Text className="text-black" variant="fwReg-fs20-lh30-gray500">
                         {t('specific.welcome.modal.logoutDialog.description')}
                     </Text>
                 </div>

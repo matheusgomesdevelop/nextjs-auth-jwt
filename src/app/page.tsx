@@ -85,7 +85,7 @@ const Home: React.FC<HomeProps> = ({ loading, error, data }) => {
 
     return (
         <main
-            className="items-center justify-between flex-col gap-y-48 flex h-[100vh]"
+            className="bg-slate-800 items-center justify-between flex-col gap-y-48 flex h-[100vh]"
             style={{
                 padding: '20px 16px',
             }}

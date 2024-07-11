@@ -44,7 +44,7 @@ const Checkbox: React.FC<CheckboxProps> = ({ checked, ...props }) => (
                 },
             }),
             icon: {
-                className: 'w-4 h-4 transition-all duration-200 text-white text-base dark:text-gray-900',
+                className: 'w-4 h-4 transition-all duration-200 text-white text-base dark:text-white',
                 style: {
                     width: '12px',
                     height: '12px',

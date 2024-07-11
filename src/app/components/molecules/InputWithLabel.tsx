@@ -13,7 +13,7 @@ interface InputWithLabelProps extends InputProps {
 
 const InputWithLabel: React.FC<InputWithLabelProps> = ({ labelText, type, name, id, placeholder, ...props }) => (
     <div className="flex-col flex gap-6">
-        <Label className="font-medium text-sm" htmlFor={name}>
+        <Label className="font-medium text-sm text-white" htmlFor={name}>
             {labelText}
         </Label>
 

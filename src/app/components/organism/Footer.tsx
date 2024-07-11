@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
 
     return (
         <footer className="container flex justify-between items-center w-full">
-            <p className="text-gray-500 flex gap-6">
+            <p className="text-white flex gap-6">
                 © {date.getFullYear()}
                 <Link href={'https://matheusgomesdev.com.br'}>matheusgomesdev.</Link>
             </p>
