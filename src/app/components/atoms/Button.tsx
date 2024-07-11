@@ -24,7 +24,7 @@ const Button: React.ForwardRefRenderFunction<ButtonRef, ButtonProps> = (
             loading={loading}
             className={`px-[10px] py-[14px] h-[44px] w-full rounded-8 border-1 border-solid hover:opacity-90 transition duration-150 ${
                 variant === 'transparent'
-                    ? 'border-none bg-transparent text-gray-900'
+                    ? 'border-none bg-transparent text-white'
                     : variant === 'fwMd-fs16-colGray700-bgWhite'
                       ? 'text-md text-gray-700 bg-white border-gray-100 hover:border-primary'
                       : variant === 'gradient'
